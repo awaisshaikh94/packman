@@ -1,0 +1,89 @@
+package project;
+
+/**
+ *
+ * @author Awais
+ * 21325
+ */
+public class Project {
+  
+    public static char[][] DisplayMaze() //Displaying Maze With Food
+    {   
+        char[][] array = new char[6][82]; // maze Structure with array of charachters
+                
+        for(int maze1=1; maze1<=5; maze1++){    // Creating Maze
+            for(int maze2=1; maze2<31; maze2++){           
+                System.out.print(array[maze1][maze2] = '-');   
+            }
+            for(int maze2=30; maze2<40; maze2++){           
+                System.out.print(array[maze1][maze2] = ' ');   
+            }
+            for(int maze2=40; maze2<70; maze2++){           
+                System.out.print(array[maze1][maze2] = '-');   
+            }
+            System.out.print("\n");
+            for(int maze2=70; maze2<80; maze2++){
+                
+                if(array[maze1][maze2]==array[0][70]) // Placing Packman
+                {
+                    array[0][70] = 'P'; // Placing Packman in Center of maze
+                    System.out.print("      ");
+                System.out.print(array[0][70] = 'P');
+                }
+                else{       // Placing Food in Maze
+                System.out.print("      ");
+                System.out.print(array[maze1][maze2] = 'o'); 
+                }
+            }
+            System.out.print("\n");
+        }         
+        
+        return array;
+    }
+    
+    public static void OpertatePackman(char[][] array)
+    {
+        double score =0;
+        
+    for(int Dimen1=1; Dimen1<5; Dimen1++) // vertical
+        {
+           for(int Dimen2=1; Dimen2<81; Dimen2++) // horizontal
+            {
+               switch (array[Dimen1][Dimen2]) {
+                   case 'o': // Food INCREMENT IN SCORE
+                       score = score+1;
+                       array[Dimen1][Dimen2]=' ';
+                       System.out.print("\n Food Eaten - Score:"+array[Dimen1][Dimen2]+""+score);
+                       break;
+                   case ' ': // spacing DO NOTHING - replace it with space
+                       array[Dimen1][Dimen2]=' ';
+                       System.out.print(array[Dimen1][Dimen2]);
+                       break;
+                   case '-': // wall - acquire attack
+                       score = score-1;
+                       array[Dimen1][Dimen2]='X';
+                       System.out.print("\n"+array[Dimen1][Dimen2]+"- Wall Attacked - Score:"+score);
+                       break;
+                   default:
+                       break;
+               }
+                  
+            } 
+        }
+    System.out.print("\n\n\n SCORE :"+score);
+    }
+
+    
+    
+    public static void main(String[] args) {
+        
+        char[][] mainArray;
+        mainArray = new char[6][82];
+        
+        mainArray = DisplayMaze();
+        
+        OpertatePackman(mainArray);
+        
+    }
+    
+}
