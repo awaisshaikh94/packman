@@ -1,0 +1,99 @@
+import javax.swing.JFrame;
+
+import java.awt.Graphics;
+import java.awt.Color;
+
+public class Packman extends JFrame
+{
+public Packman()
+{
+ super("Packman - GAME");
+ setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ setSize(400,500);
+ setVisible(true);
+}
+
+@Override
+public void paint(Graphics g)
+{
+ super.paint(g);
+
+g.setColor(Color.yellow);  // drawing pacman
+g.fillArc(25,40,40,40,30,300);
+  
+ g.setColor(Color.BLACK);
+ g.fillRect(0, 30, 400, 5); // above border Line
+ g.fillRect(8, 0, 5, 490); // left border Line
+ g.fillRect(0, 487, 400, 5); // bottom border Line
+ g.fillRect(387, 0, 5, 490); // left border Line
+ 
+ g.setColor(Color.BLACK);
+ g.fillRect(0, 90, 215, 5); // first Line
+ g.fillRect(315, 90, 460, 5);
+ g.setColor(Color.RED);
+  // first line food
+ g.fillOval(120,50,10,10);
+ g.fillOval(220,50,10,10);
+ g.fillOval(320,50,10,10);
+ 
+ g.setColor(Color.BLACK);
+ g.fillRect(0, 150, 115, 5); // 2nd Line
+ g.fillRect(215, 150, 460, 5);
+ g.setColor(Color.RED);
+ g.fillOval(40,110,10,10); // 2nd line food
+ g.fillOval(120,110,10,10);
+ g.fillOval(220,110,10,10);
+ g.fillOval(320,110,10,10);
+ 
+ g.setColor(Color.BLACK);
+ g.fillRect(0, 220, 215, 5); // 3 Line
+ g.fillRect(315, 220, 460, 5); 
+ g.setColor(Color.RED);
+ g.fillOval(40,180,10,10); // 3 line food
+ g.fillOval(120,180,10,10);
+ g.fillOval(220,180,10,10);
+ g.fillOval(320,180,10,10);
+ 
+ g.setColor(Color.BLACK);
+ g.fillRect(0, 290, 115, 5); // 4 Line
+ g.fillRect(215, 290, 460, 5);
+ g.setColor(Color.RED);
+ g.fillOval(40,250,10,10); // 4 line food
+ g.fillOval(120,250,10,10);
+ g.fillOval(220,250,10,10);
+ g.fillOval(320,250,10,10);
+  
+ g.setColor(Color.BLACK);
+ g.fillRect(0, 360, 215, 5); // 5 Line
+ g.fillRect(315, 360, 460, 5);
+ g.setColor(Color.RED);
+ g.fillOval(40,320,10,10); // 5 line food
+ g.fillOval(120,320,10,10);
+ g.fillOval(220,320,10,10);
+ g.fillOval(320,320,10,10);
+ 
+ g.setColor(Color.BLACK);
+ g.fillRect(0, 430, 115, 5); // first Line
+ g.fillRect(215, 430, 460, 5);
+ g.setColor(Color.RED);
+ g.fillOval(40,390,10,10); // 6 line food
+ g.fillOval(120,390,10,10);
+ g.fillOval(220,390,10,10);
+ g.fillOval(320,390,10,10);
+
+ g.fillOval(40,455,10,10); // 7 line food
+ g.fillOval(120,455,10,10);
+ g.fillOval(220,455,10,10);
+ g.fillOval(320,455,10,10);  
+ 
+ 
+ 
+}
+
+public static void main(String[]args)
+{
+ Packman pac=new Packman();
+
+ 
+}
+}
